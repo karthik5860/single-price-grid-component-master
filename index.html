@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <style>
+    /*HTML*/
+    html{
+      font-family: 'Karla', sans-serif;
+      font-size: 18px;
+    }
+    /* * */
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    /*BODY*/
+    body{
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      align-items: center;
+      margin: 0;
+      background: hsl(204, 43%, 93%);
+    }
+    /*MAIN*/
+    .main{
+      width: min(700px,85%);
+      min-height: 400px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto 1fr;
+      align-items: center;
+      justify-content: center;
+      background: lightcoral;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px -10px gray;
+    }
+
+    /*GRID*/
+
+    .grid{
+      padding: max(30px,3vw) max(20px,2vw);
+      box-sizing: border-box;
+      color: hsl(218, 22%, 67%);
+      min-height: 100%;
+    }
+    /*GRID P*/
+    .grid  p{
+      margin: 0 0 20px 0;
+    }
+    .grid  p:last-child{
+      margin: 0;
+    }
+    .grid  p:first-child{
+      margin: 0 0 20px 0;
+      font-size: 20px;
+      font-weight: 700;
+      color: white;
+    }
+
+    /*GRID FIRST CHILD*/
+    .grid:first-child  p:nth-child(2){
+      font-weight: 700;
+    }
+    .grid:first-child  p:last-child{
+          line-height: 30px;
+        }
+    .grid:first-child p:nth-child(1){
+          font-size: 25px;
+          color: hsl(179, 62%, 43%);
+        }
+    .grid:first-child p:nth-child(2){
+          color: hsl(71, 73%, 54%)
+        }
+    .grid:first-child{
+          background: white;
+    }    
+
+
+    /*GRID SECOND CHILD*/
+    .grid:nth-child(2){
+      background: hsl(179, 62%, 43%);
+      height: 100%;
+    }
+    span{
+      font-weight:700;
+      font-size: 40px;
+      vertical-align:middle;
+      color: white;
+    }
+
+    .grid:nth-child(2) p:nth-child(2){
+      margin: 0 0 10px 0;
+      color: hsl(218deg 100% 95%)
+    }
+    .grid:nth-child(2) p:nth-child(3){
+      color: white;
+    }
+    .grid:nth-child(2) p:nth-child(4){
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      background: hsl(71, 73%, 54%);
+      color: white;
+      box-shadow: 0 5px 20px -10px black;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .grid:nth-child(2) p:nth-child(4):hover{
+      transform: scale(1.01);
+    }
+    
+    /*GRID THIRD CHILD*/
+
+    .grid:nth-child(3) p:nth-child(n+2){
+      margin: 0;
+      color: #eef2ff;
+    }    
+    .grid:nth-child(3){
+      background: hsl(179deg 42% 57%);
+    }
+   
+    @media screen and (min-width: 700px){
+      .main{
+        grid-template-columns: 1fr 1fr;
+      }
+      .grid:first-child{
+        grid-column: 1/3;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="grid">
+      <p>Join our community</p>
+      <p>30-day, hassle-free money back guarantee</p>
+      <p>Gain access to our full library of tutorials along with expert code reviews. 
+      Perfect for any developers who are serious about honing their skills.</p>
+    </div>
+    <div class="grid">
+      <p>Monthly Subscription</p>
+      <p><span>&dollar;29</span> per month</p>
+      <p>Full access for less than &dollar;1 a day</p>
+      <p>Sign Up</p>
+    </div>
+    <div class="grid">
+      <p>Why Us</p>
+      <p>Tutorials by industry experts</p>
+      <p>Peer &amp; expert code review</p>
+      <p>Coding exercises</p>
+      <p>Access to our GitHub repos</p>
+      <p>Community forum</p>
+      <p>Flashcard decks</p>
+      <p>New videos every week</p>
+    </div>
+  </div>
+</body>
+</html>
